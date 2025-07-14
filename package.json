@@ -25,7 +25,7 @@
   },
   "homepage": "https://github.com/saipisupati/NewsLift#readme",
   "engines": {
-    "node": "18.x"
+    "node": "22.x"
   },
   "dependencies": {
     "openai": "^5.9.0"
