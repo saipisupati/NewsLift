@@ -4,22 +4,26 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>NewsLift</title>
-  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@3.3.3/dist/tailwind.min.css" rel="stylesheet">
+  <!-- Tailwind via their official CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body class="bg-gray-50 min-h-screen flex flex-col items-center p-4">
+<body class="bg-gray-50 min-h-screen flex flex-col items-center p-6">
 
-  <h1 class="text-3xl font-bold mb-6">NewsLift</h1>
+  <h1 class="text-4xl font-bold mb-8">NewsLift</h1>
 
-  <div class="w-full max-w-2xl space-y-4">
+  <div class="w-full max-w-2xl space-y-6">
     <textarea
       id="input-text"
-      rows="10"
+      rows="8"
       placeholder="Paste your blog post, thread, or transcript here…"
-      class="w-full p-3 border rounded focus:outline-none focus:ring"
+      class="w-full p-4 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400"
     ></textarea>
 
-    <div class="flex space-x-4 items-center">
-      <select id="tone-select" class="flex-1 p-2 border rounded">
+    <div class="flex items-center space-x-4">
+      <select
+        id="tone-select"
+        class="flex-1 p-2 border border-gray-300 rounded-lg focus:outline-none"
+      >
         <option value="professional">Professional</option>
         <option value="casual">Casual</option>
         <option value="friendly">Friendly</option>
@@ -27,7 +31,7 @@
       </select>
       <button
         id="generate-btn"
-        class="px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700 disabled:opacity-50"
+        class="px-5 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 disabled:opacity-50"
       >
         Generate
       </button>
@@ -35,20 +39,20 @@
         id="spinner"
         class="w-6 h-6 text-blue-600 animate-spin hidden"
         xmlns="http://www.w3.org/2000/svg"
-        fill="none" viewBox="0 0 24 24"
+        fill="none"
+        viewBox="0 0 24 24"
       >
-        <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+        <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"/>
         <path class="opacity-75" fill="currentColor"
-          d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4z">
-        </path>
+          d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4z"/>
       </svg>
     </div>
 
     <div
       id="output"
-      class="whitespace-pre-wrap bg-white p-4 border rounded min-h-[8rem]"
+      class="min-h-[8rem] p-4 bg-white border border-gray-300 rounded-lg whitespace-pre-wrap"
     >
-      <!-- generated newsletter will appear here -->
+      <!-- Generated newsletter shows up here -->
     </div>
   </div>
 
